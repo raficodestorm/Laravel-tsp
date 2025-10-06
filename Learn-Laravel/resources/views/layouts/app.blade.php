@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-<div><h1>Hello Mr Laravel!</h1></div>
+@vite(['resources/js/app.js'])
+    @include('components.navbar')
+
+    <div>
+        @yield('content')
+    </div>
+    @include('components.footer')
 </body>
 </html>
-
