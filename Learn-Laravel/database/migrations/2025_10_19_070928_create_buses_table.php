@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
-            $table->string('bus_name');
-            $table->string('coach_name');
+            $table->unsignedBigInteger('company_id');
+            $table->string('bus_number');
             $table->timestamps();
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
+        
     }
 
     /**
