@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ======= CSS-link ======= -->
+     <link rel="stylesheet" href="assests/style.css">
+     <!-- ========== Bootstrap-link ============ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="sidebar">
+        <ul>
+            <li class="first">
+                <span class="nav-logo">RunStar</span>
+                <button class="toggle-btn" id="toggleSide" onclick="toggleSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#220901"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                </button>
+            </li>
+            <li>
+                <a href="#" title="Dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Bus Entry">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e00000"><path d="M240-200q-50 0-85-35t-35-85H40v-360q0-33 23.5-56.5T120-760h560l240 240v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm360-360h160L640-680h-40v120Zm-240 0h160v-120H360v120Zm-240 0h160v-120H120v120Zm120 290q21 0 35.5-14.5T290-320q0-21-14.5-35.5T240-370q-21 0-35.5 14.5T190-320q0 21 14.5 35.5T240-270Zm480 0q21 0 35.5-14.5T770-320q0-21-14.5-35.5T720-370q-21 0-35.5 14.5T670-320q0 21 14.5 35.5T720-270ZM120-400h32q17-18 39-29t49-11q27 0 49 11t39 29h304q17-18 39-29t49-11q27 0 49 11t39 29h32v-80H120v80Zm720-80H120h720Z"/></svg>
+                    <span>Bus Entry</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Booking">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0000F5"><path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-640h-80v280l-100-60-100 60v-280H240v640Zm0 0v-640 640Zm200-360 100-60 100 60-100-60-100 60Z"/></svg>
+                    <span>Booking</span>
+                </a>
+            </li>
+            <li  class="dropdown">
+                <a href="#" onclick="toggleSubmenu(event)" title="Stations" id="drop">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="M80-80v-526q0-85 44-147.5T248-848q54-21 115-26.5t117-5.5q56 0 117 5.5T712-848q80 32 124 94.5T880-606v526H80Zm284-80h230l-60-60H424l-60 60Zm-64-280h360v-160H300v160Zm320 140q17 0 28.5-11.5T660-340q0-17-11.5-28.5T620-380q-17 0-28.5 11.5T580-340q0 17 11.5 28.5T620-300Zm-280 0q17 0 28.5-11.5T380-340q0-17-11.5-28.5T340-380q-17 0-28.5 11.5T300-340q0 17 11.5 28.5T340-300ZM160-160h140v-20l42-42q-44-6-73-39.5T240-340v-260q0-78 74.5-99T480-720q100 0 170 21t70 99v260q0 45-29 78.5T618-222l42 42v20h140v-446q0-60-29.5-102.5T682-774q-44-17-97.5-21.5T480-800q-51 0-104.5 4.5T278-774q-59 23-88.5 65.5T160-606v446Zm0 0h640-640Z"/></svg>
+                    <span>Stations</span>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0000F5"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                </a>
+                <ul class="submenu">
+                    <div>
+                    <li><a href="#" title="Booking" id="sub">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#220901"><path d="M280-280v-400h400v400H280Zm80-80h240v-240H360v240ZM200-200v80q-33 0-56.5-23.5T120-200h80Zm-80-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80q0-33 23.5-56.5T200-840v80Zm80 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80q0 33-23.5 56.5T760-120Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80q33 0 56.5 23.5T840-760h-80Z"/></svg>
+                        <span>add</span>
+                        </a>
+                    </li>
+                    <li><a href="#" title="Booking" id="sub">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#220901"><path d="M280-280v-400h400v400H280Zm80-80h240v-240H360v240ZM200-200v80q-33 0-56.5-23.5T120-200h80Zm-80-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80q0-33 23.5-56.5T200-840v80Zm80 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80q0 33-23.5 56.5T760-120Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80q33 0 56.5 23.5T840-760h-80Z"/></svg>
+                        <span>remove</span>
+                        </a>
+                    </li>
+                    <li><a href="#" title="Booking" id="sub">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#220901"><path d="M280-280v-400h400v400H280Zm80-80h240v-240H360v240ZM200-200v80q-33 0-56.5-23.5T120-200h80Zm-80-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80q0-33 23.5-56.5T200-840v80Zm80 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80q0 33-23.5 56.5T760-120Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80q33 0 56.5 23.5T840-760h-80Z"/></svg>
+                        <span>edit</span>
+                        </a>
+                    </li>
+                    <li><a href="#" title="Booking" id="sub">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#220901"><path d="M280-280v-400h400v400H280Zm80-80h240v-240H360v240ZM200-200v80q-33 0-56.5-23.5T120-200h80Zm-80-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80q0-33 23.5-56.5T200-840v80Zm80 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80q0 33-23.5 56.5T760-120Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80q33 0 56.5 23.5T840-760h-80Z"/></svg>
+                        <span>show</span>
+                        </a>
+                    </li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="#" title="Companies">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#6B2346"><path d="M480-100q-79 0-148-30t-120.5-81.5Q160-263 130-332t-30-148q0-79 30-148t81.5-120.5Q263-800 332-830t148-30v-100l160 160-160 160v-100q-108 0-184 76t-76 184q0 66 30.5 122.5T332-266q16-28 47.5-47.5T452-338q-3-21-8-42t-12-39q-11 9-24 14t-28 5q-33 0-56.5-23.5T300-480v-40q0-17-5.5-32T280-580q50-1 89 9 34 9 62 29.5t29 61.5q0 9-1.5 16.5T453-448q-13-10-26-18t-27-14q17 13 39 40t41 64q20-49 50-96.5t70-87.5q-23 16-44 34t-41 38q-7-11-11-24.5t-4-27.5q0-42 29-71t71-29h40q23 0 38-6t25-14q11-9 17-20 4 67-7 120-9 45-34 82.5T600-440q-15 0-28.5-4T547-455q-7 19-16 50.5T517-337q38 7 67 26t44 45q51-35 81.5-91T740-480h120q0 79-30 148t-81.5 120.5Q697-160 628-130t-148 30Z"/></svg>
+                    <span>Companies</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Caleder">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0000F5"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
+                    <span>Calender</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <nav class="navbar sticky-top bg-body-tertiary" id="header">
+             <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <form class="d-flex" role="search">
+                        <input class="form-control " type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn bg-white" type="submit">Search</button>
+                    </form>
+                    <div class="col-auto ms-auto">
+                        <div class="position-relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" 
+                                width="28px" fill="#0000F5" class="notification-icon">
+                            <path d="M80-560q0-100 44.5-183.5T244-882l47 64q-60 44-95.5 111T160-560H80Zm720 0q0-80-35.5-147T669-818l47-64q75 55 119.5 138.5T880-560h-80ZM160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/>
+                            </svg>
+                            <span class="badge bg-danger rounded-pill notification-badge">3</span>
+                        </div>
+                        
+                        <!-- Profile Dropdown -->
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" 
+                            id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assests/image/rafi33.jpg" alt="Profile" 
+                                class="rounded-circle" style="width:40px; height:40px; object-fit:cover; border:2px solid #0000F5;">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </nav>
+
+        
+        <div class="container-fluid">
+            <div class="row g-2 ">
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row g-2 ">
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row g-2 ">
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2">
+                    <div class="hello p-2">
+                    <h2>Hello</h2>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis tenetur harum iure a reiciendis fuga quidem ducimus commodi suscipit quia, doloribus porro itaque eveniet ipsum animi, quas praesentium id eligendi, eaque sunt soluta unde! Repellendus, delectus qui. Obcaecati nemo inventore alias sapiente voluptas sint facilis, non beatae iste explicabo repellat consectetur enim! Voluptas, nesciunt temporibus? Fugit ducimus consequuntur harum labore perferendis explicabo amet odit sapiente laboriosam laborum quod fuga doloribus sit, saepe praesentium. Ut cupiditate quaerat exercitationem, modi aspernatur quam molestias laboriosam labore! Odit saepe placeat impedit dolores dolorem quia, libero architecto reprehenderit natus aliquid doloribus exercitationem quisquam. Aut, autem maiores dolor perspiciatis tenetur dolores officiis exercitationem obcaecati quos quis sed quasi officia deserunt ut placeat quibusdam numquam vel. Reprehenderit ab asperiores voluptatem maxime, neque animi placeat repellendus. Repellat corporis sed assumenda aspernatur numquam sequi harum iusto! Voluptate saepe hic tempore, optio architecto enim accusamus quisquam error fugit commodi excepturi labore quae quis, nemo fuga et. Consectetur id eveniet laboriosam reiciendis maxime, illo officiis dolorem dicta nulla explicabo fuga quod est iusto itaque dolorum similique aliquid qui iure rem perspiciatis sequi? Quos ad dolores odio quibusdam earum numquam provident suscipit. Natus unde repudiandae itaque, totam explicabo voluptas sapiente soluta ex? Repellat porro obcaecati quod sit nulla, fugit pariatur quas totam adipisci nemo placeat? Incidunt nisi excepturi, blanditiis quas dolorum consequatur rerum id ducimus quam animi illum fugiat doloremque ea, delectus dignissimos, ab rem omnis dolorem! Voluptatum minus totam minima error nostrum a illo molestias eum delectus id enim veniam hic, harum aut maiores vero molestiae iste odio deserunt praesentium sequi! Necessitatibus enim corrupti eaque modi laudantium accusantium minus fuga provident, excepturi sunt mollitia a accusamus velit illo tempore, temporibus placeat. Tempore animi eius, sed voluptatem architecto necessitatibus ea obcaecati eum et provident quis, perspiciatis sint, beatae assumenda saepe iste earum distinctio dolorem. Impedit nam officia labore sunt dolores illum ducimus possimus, veniam natus officiis praesentium perspiciatis explicabo consequatur incidunt nemo ab modi corrupti enim quam? Laborum, quidem aliquam. Ex similique, ut praesentium ratione necessitatibus beatae eveniet obcaecati numquam deserunt! Unde labore laborum distinctio quis voluptatum architecto cupiditate aspernatur, cum odit consequuntur nam officia quaerat natus corrupti molestias rerum doloremque sint asperiores, optio eligendi mollitia fuga aliquam! Voluptates dolorem quod nobis corporis debitis soluta earum suscipit vero expedita commodi, amet voluptatum optio voluptate pariatur labore perspiciatis unde iusto assumenda? Temporibus optio quam doloremque perferendis tempore earum voluptatibus fugiat voluptatem esse fuga maiores sed nulla, perspiciatis ea deleniti! Iste voluptatibus veniam sapiente. Commodi, libero consequatur? Odit praesentium, eum cum alias cumque inventore quis iure debitis laborum dolor, consequuntur vel esse ullam iste? Sequi et dolorum voluptatum ratione veritatis saepe ab, iure expedita quisquam aliquam dolor ut quasi delectus cumque, possimus, dolorem labore deleniti illum porro repellat laborum doloribus excepturi nihil. Maiores recusandae veritatis est nihil pariatur nobis sed nisi, iure fugit quos omnis ducimus maxime cum vel hic! Magnam, ipsam fugit ab alias ratione iusto pariatur? Veritatis nam ea est nihil dolores officia consequuntur optio quisquam sed nisi! Nisi ipsum dolorum dolore?</p>
+        </div>
+        
+    </main>
+    <script src="assests/script.js"></script>
+    <!-- Bootstrap-link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
