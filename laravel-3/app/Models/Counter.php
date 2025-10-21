@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Counter extends Model
 {
-    //
+    public function counter()
+    {
+        return $this->belongsTo(Aria::class);
+    }
 }

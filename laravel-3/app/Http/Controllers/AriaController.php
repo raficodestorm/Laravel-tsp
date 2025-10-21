@@ -13,7 +13,7 @@ class AriaController extends Controller
     public function index()
     {
         $arial = Aria::find(1);
-        return $arial->ticket();
+        return $arial->ticket;
     }
 
     /**
